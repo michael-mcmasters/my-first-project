@@ -20,7 +20,10 @@ function App() {
     const index = copy.indexOf(calculators[id]);
     copy[index] = { ...calculators };
     copy[index].number = 22;
-    setCalculators((prevVal) => copy);
+
+    // Either just sending copy or using an arrow function both give the same results.
+    //setCalculators(() => copy);
+    setCalculators(copy);
   };
 
   const handleDecrease = () => {
