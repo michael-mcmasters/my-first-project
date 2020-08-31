@@ -1,12 +1,23 @@
 import React from "react";
 
-function Calculator() {
+// If no arguments, pass as reference
+// {props.onDecrease}
+// If arguments, pass as an arrow function
+// {() => props.onIncrease{props.id}}
+function Calculator(props) {
   return (
     <div className="Calculator CalcBGColor">
       <span className="CalcBGColor">
-        <button className="btn btn-info btn-sm m-2">Plus</button>
-        Hello World
-        <button className="btn btn-info btn-sm m-2">Minus</button>
+        <button onClick={props.onDecrease} className="btn btn-info btn-sm m-2">
+          Minus
+        </button>
+        {props.number}
+        <button
+          onClick={() => props.onIncrease(props.id)}
+          className="btn btn-info btn-sm m-2"
+        >
+          Plus
+        </button>
       </span>
     </div>
   );
