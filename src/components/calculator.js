@@ -9,14 +9,14 @@ function Calculator(props) {
     <div className="Calculator CalcBGColor">
       <span className="CalcBGColor">
         <button
-          onClick={() => props.onDecrease(props.id)}
+          onClick={() => props.onDecrease(props.calculator)}
           className="btn btn-info btn-sm m-2"
         >
           Minus
         </button>
         {props.number}
         <button
-          onClick={() => props.onIncrease(props.id)}
+          onClick={() => props.onIncrease(props.calculator)}
           className="btn btn-info btn-sm m-2"
         >
           Plus
