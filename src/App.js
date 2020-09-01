@@ -20,12 +20,16 @@ function App() {
   // }
 
   const handleIncrease = (id) => {
+    // Copies calculators to new array
     const copy = [...calculators];
-    const index = copy.indexOf(calculators[id]);
-    // copy[index] = { ...calculators[id] };
-    // copy[index].number++;
-    copy[index].number = calculators[id].number;
-    copy[index].number++;
+
+    // Find index this id belongs to
+    //const index = calculators.indexOf(calculators[id]);
+
+    // Same as writing copy[index] = calculators[id] in C#. We are just copying the index from one array to another.
+    // Replace this line with copy[index].number = calculators[id].number; and it may make more sense. The spread operator just makes it look confusing.
+    copy[id] = { ...calculators[id] };
+    copy[id].number++;
     setCalculators(() => copy);
   };
 
