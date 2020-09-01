@@ -8,7 +8,10 @@ function Calculator(props) {
   return (
     <div className="Calculator CalcBGColor">
       <span className="CalcBGColor">
-        <button onClick={props.onDecrease} className="btn btn-info btn-sm m-2">
+        <button
+          onClick={() => props.onDecrease(props.id)}
+          className="btn btn-info btn-sm m-2"
+        >
           Minus
         </button>
         {props.number}
